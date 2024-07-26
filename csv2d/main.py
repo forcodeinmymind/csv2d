@@ -2,7 +2,7 @@
 """
 
 
-def create(shape: tuple[int, int], value: int):
+def create(shape: tuple[int, int], value: int = 0):
     return [[value] * shape[0] for _ in range(shape[1])]
 
 def conv_index(data: tuple[tuple[int]], coord: tuple[int, int]) -> int:
@@ -59,3 +59,8 @@ def load(filename: str) -> tuple[tuple[int]]:
         for line in file.read().splitlines():
             _list.append([int(x) for x in line.split(", ")])
         return _list
+
+def flatten(data: tuple[tuple[int]]):
+    for y in range(len(data)):
+        for x in data[y]:
+            yield get_item(data, (x, y))

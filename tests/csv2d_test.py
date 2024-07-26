@@ -27,3 +27,6 @@ csv2d.save(csv2d_0, "csv2d_0.csv")
 csv2d_1 = csv2d.load("csv2d_0.csv")
 
 print(csv2d.string(csv2d_1))
+
+for i, e in enumerate(csv2d.flatten(csv2d_0)):
+    print(f"{i} {e}")
